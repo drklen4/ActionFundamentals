@@ -4,9 +4,15 @@ on: [workflow_dispatch]
 
 jobs:
   another-job:
-    uses: ./.github/workflows/reusable.yml
-    with:
-      who-to-greet: 'Kasia'
+    runs-on: ubuntu-latest
+    steps:
+    - name: trigger reusable job
+      id: step1
+      uses: ./.github/workflows/reusable.yml
+      with:
+        who-to-greet: 'Kasia'
+    - run: echo "Time was ${{ step1.outputs.current-time }}"
+
   something-that-prints-output:
     runs-on: ubuntu-latest
     needs: [another-job]
