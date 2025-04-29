@@ -7,6 +7,7 @@ on:
       who-to-greet:
         type: string
         required: true
+        default: Universe
     outputs:
       current-time:
         description: 'The time when greeting.'
