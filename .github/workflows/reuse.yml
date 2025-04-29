@@ -11,7 +11,7 @@ jobs:
       uses: ./.github/workflows/reusable.yml
       with:
         who-to-greet: 'Kasia'
-    - run: echo "Time was ${{ step1.outputs.current-time }}"
+    - run: echo "Time was ${{ steps.step1.outputs.current-time }}"
 
   something-that-prints-output:
     runs-on: ubuntu-latest
