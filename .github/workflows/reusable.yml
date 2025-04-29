@@ -2,6 +2,11 @@ name: Reusable workflow
 
 on:
   workflow_dispatch:
+    inputs:
+      who-to-greet:
+        type: string
+        required: true
+        default: Kasia!
   workflow_call:
     inputs:
       who-to-greet:
